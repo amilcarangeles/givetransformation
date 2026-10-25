@@ -61,39 +61,4 @@
 <textarea aria-label="Mensaje" name="mensaje" placeholder="Cuéntanos cómo deseas participar" required rows="5" maxlength="5000"></textarea>
 <button class="btn" type="submit">Enviar mensaje</button>
 
-</form></div></div></section></main><footer><div class="wrap"><strong>Give Transformation</strong><p>Educación, solidaridad y desarrollo humano · Santo Domingo, República Dominicana</p><p>© 2026. Todos los derechos reservados. Sitio web desarrollado y alojado por <a href="https://clientes.angelesmedia.net" target="_blank" rel="noopener noreferrer">Angeles Media, S.R.L.</a></p></div></footer><script>(function(){const h=document.querySelector('.site-header'),b=document.querySelector('.menu-toggle'),m=document.getElementById('mobile-navigation');if(!h||!b||!m)return;function setOpen(v){h.classList.toggle('menu-open',v);b.setAttribute('aria-expanded',String(v));b.setAttribute('aria-label',v?'Cerrar menú':'Abrir menú')}b.addEventListener('click',()=>setOpen(!h.classList.contains('menu-open')));m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});document.addEventListener('click',e=>{if(!h.contains(e.target))setOpen(false)});window.addEventListener('resize',()=>{if(window.innerWidth>1050)setOpen(false)})})();</script><script>
-(function(){
-  const form=document.getElementById('contact-form');
-  if(!form)return;
-  const button=form.querySelector('button[type="submit"]');
-  const status=document.getElementById('form-status');
-  form.addEventListener('submit',async function(event){
-    event.preventDefault();
-    if(!form.reportValidity())return;
-    button.disabled=true;
-    button.textContent='Enviando...';
-    status.style.display='none';
-    try{
-      const response=await fetch(form.action,{
-        method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}
-      });
-      const result=await response.json();
-      if(!response.ok||result.success===false||result.success==='false'){
-        throw new Error(result.message||'No se pudo enviar el mensaje.');
-      }
-      form.reset();
-      status.textContent='¡Gracias por escribirnos! Tu mensaje fue enviado correctamente. Te responderemos lo antes posible.';
-      status.style.color='#087a58';
-    }catch(error){
-      status.textContent='No pudimos confirmar el envío. Inténtalo nuevamente o escribe a info@givetransformation.org.';
-      status.style.color='#b42318';
-      console.error('Error del formulario:',error);
-    }finally{
-      status.style.display='block';
-      button.disabled=false;
-      button.textContent='Enviar mensaje';
-      status.scrollIntoView({behavior:'smooth',block:'nearest'});
-    }
-  });
-})();
-</script></body></html>
+</form></div></div></section></main><footer><div class="wrap"><strong>Give Transformation</strong><p>Educación, solidaridad y desarrollo humano · Santo Domingo, República Dominicana</p><p>© 2026. Todos los derechos reservados. Sitio web desarrollado y alojado por <a href="https://clientes.angelesmedia.net" target="_blank" rel="noopener noreferrer">Angeles Media, S.R.L.</a></p></div></footer><script>(function(){const h=document.querySelector('.site-header'),b=document.querySelector('.menu-toggle'),m=document.getElementById('mobile-navigation');if(!h||!b||!m)return;function setOpen(v){h.classList.toggle('menu-open',v);b.setAttribute('aria-expanded',String(v));b.setAttribute('aria-label',v?'Cerrar menú':'Abrir menú')}b.addEventListener('click',()=>setOpen(!h.classList.contains('menu-open')));m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});document.addEventListener('click',e=>{if(!h.contains(e.target))setOpen(false)});window.addEventListener('resize',()=>{if(window.innerWidth>1050)setOpen(false)})})();</script></body></html>
